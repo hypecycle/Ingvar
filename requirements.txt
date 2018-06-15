@@ -1,0 +1,2 @@
+# Latest version: https://pypi.python.org/pypi/Flask
+Flask==1.0.2

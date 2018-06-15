@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>Ingvar – der IKEA Style-Classifier &#8211; Oliver Heidorn</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Oliver Heidorn &raquo; Feed" href="https://oliverheidorn.de/wordpress/index.php/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Oliver Heidorn &raquo; Kommentar-Feed" href="https://oliverheidorn.de/wordpress/index.php/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/oliverheidorn.de\/wordpress\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.6"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+			<style>
+			#wp-admin-bar-layers-edit-layout .ab-icon:before{
+				font-family: "layers-interface" !important;
+				content: "\e62f" !important;
+				font-size: 16px !important;
+			}
+			</style>
+		<link rel='stylesheet' id='contact-form-7-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8' type='text/css' media='all' />
+<link rel='stylesheet' id='essential-grid-plugin-settings-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/essential-grid/public/assets/css/settings.css?ver=2.0.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800&#038;ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-raleway-css'  href='https://fonts.googleapis.com/css?family=Raleway%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tp-droid-serif-css'  href='https://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700&#038;ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='flowplayer5-skins-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/flowplayer5/frontend/assets/flowplayer-v7/skin/skin.css?ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='flowplayer5-logo-origin-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/flowplayer5/frontend/assets/css/public-concat.min.css?ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/instagram-feed/css/sb-instagram.min.css?ver=1.4.9' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/revslider/public/assets/css/settings.css?ver=5.0.8.5' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel='stylesheet' id='layers-framework-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/framework.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='eagle-framework-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/eagle/assets/css/framework.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='layers-components-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/components.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='eagle-components-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/eagle/assets/css/components.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='layers-responsive-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/responsive.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='eagle-responsive-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/eagle/assets/css/responsive.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='eagle-fonts-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/eagle/assets/css/fonts.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='layers-google-fonts-css'  href='//fonts.googleapis.com/css?family=Lato%3Aregular%2Citalic%2C700%2C100%2C100italic%2C300%2C300italic%2C700italic%2C900%2C900italic&#038;ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='layers-icon-fonts-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/layers-icons.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='layers-style-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/eagle/style.css?ver=1.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wavesurfer_font-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/wavesurfer-wp/css/wavesurfer-wp_font.css?ver=4.8.6' type='text/css' media='all' />
+<link rel='stylesheet' id='wavesurfer_flat-icons-css'  href='https://oliverheidorn.de/wordpress/wp-content/plugins/wavesurfer-wp/css/wavesurfer-wp_flat-icons.css?ver=4.8.6' type='text/css' media='all' />
+			<script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-100465672-1', 'auto');
+			  ga('send', 'pageview');
+
+			</script>
+		<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/essential-grid/public/assets/js/lightbox.js?ver=2.0.9.1'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/essential-grid/public/assets/js/jquery.themepunch.tools.min.js?ver=2.0.9.1'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/essential-grid/public/assets/js/jquery.themepunch.essential.min.js?ver=2.0.9.1'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/flowplayer5/frontend/assets/flowplayer-v7/flowplayer.min.js?ver=3.0.2'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.0.8.5'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/the-preloader/js/preloader-script.js'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/typed//js/typed.js?ver=4.8.6'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/typed//js/frontend.js?ver=4.8.6'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/www/htdocs/v114341/wordpress/wp-content/themes/eagle/assets/js/theme.js?ver=4.8.6'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/js/plugins.js?ver=1.2.4'></script>
+<link rel='https://api.w.org/' href='https://oliverheidorn.de/wordpress/index.php/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://oliverheidorn.de/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://oliverheidorn.de/wordpress/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Spotify Friendship Saver App' href='https://oliverheidorn.de/wordpress/index.php/project/friendship-saver/' />
+<link rel='next' title='Pornhub #PremiumPlaces (SFW)' href='https://oliverheidorn.de/wordpress/index.php/project/pornhub-premiumplaces/' />
+<meta name="generator" content="WordPress 4.8.6" />
+<link rel="canonical" href="https://oliverheidorn.de/wordpress/index.php/project/ingvar/" />
+<link rel='shortlink' href='https://oliverheidorn.de/wordpress/?p=1542' />
+<link rel="alternate" type="application/json+oembed" href="https://oliverheidorn.de/wordpress/index.php/wp-json/oembed/1.0/embed?url=http%3A%2F%2Foliverheidorn.de%2Fwordpress%2Findex.php%2Fproject%2Fingvar%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://oliverheidorn.de/wordpress/index.php/wp-json/oembed/1.0/embed?url=http%3A%2F%2Foliverheidorn.de%2Fwordpress%2Findex.php%2Fproject%2Fingvar%2F&#038;format=xml" />
+<script>flowplayer.conf = {"embed":[]};</script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				var ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content = "";
+
+					data = {};
+					
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = '32494693f1';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"https://oliverheidorn.de/wordpress/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				};
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+						}
+					}
+				},30);
+			});
+		</script>
+		    	<style type="text/css">
+			#wptime-plugin-preloader{
+				position: fixed;
+				top: 0;
+			 	left: 0;
+			 	right: 0;
+			 	bottom: 0;
+				background:url(https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/preloader_128_128_4.gif) no-repeat #222626 50%;
+				-moz-background-size:64px 64px;
+				-o-background-size:64px 64px;
+				-webkit-background-size:64px 64px;
+				background-size:64px 64px;
+				z-index: 99998;
+				width:100%;
+				height:100%;
+			}
+		</style>
+
+		<noscript>
+    		<style type="text/css">
+        		#wptime-plugin-preloader{
+        			display:none !important;
+        		}
+    		</style>
+		</noscript>
+    <meta name="generator" content="Powered by Slider Revolution 5.0.8.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+		<style type="text/css" id="wp-custom-css">
+			/*
+Hier kannst du dein eigenes CSS einfügen.
+
+Klicke auf das Hilfe-Symbol oben, um mehr zu lernen.
+*/
+
+		</style>
+	</head>
+<body class="project-template-default single single-project postid-1542 eagle-site-layout-fullwidth has-site-logo">
+	<section class="wrapper invert off-canvas-right" id="off-canvas-right">
+    <a class="close-canvas l-close" data-toggle="#off-canvas-right" data-toggle-class="open"></a>
+    <div class="row content nav-mobile">
+        <nav class="nav nav-vertical"><ul id="menu-default_menu" class="menu"><li id="menu-item-763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-763"><a href="https://oliverheidorn.de/wordpress/">Intro</a></li>
+<li id="menu-item-408" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-408"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/">Me</a>
+<ul  class="sub-menu">
+	<li id="menu-item-831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-831"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-87">Creative Me</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-829"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-114">Technology Me</a></li>
+	<li id="menu-item-1051" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1051"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-128">Rest of Me</a></li>
+</ul>
+</li>
+<li id="menu-item-1038" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1038"><a href="https://oliverheidorn.de/wordpress/index.php/kunden/">Kunden</a></li>
+<li id="menu-item-576" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="https://oliverheidorn.de/wordpress/index.php/awards/">Awards</a></li>
+<li id="menu-item-409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="https://oliverheidorn.de/wordpress/index.php/connect/">Kontakt</a></li>
+</ul></nav>    </div>
+    <aside id="search-2" class="content widget widget_search"><form role="search" method="get" class="search-form" action="https://oliverheidorn.de/wordpress/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+	</label>
+	<input type="submit" class="search-submit" value="&#61442;" title="Search" />
+</form></aside></section>		<section class="wrapper-site">
+
+		
+		
+		<header class="header-site content header-left" >
+						<div class="container clearfix">
+				<div class="logo">
+	
+	<a href="https://oliverheidorn.de/wordpress/" class="site-logo-link" rel="home"><img width="300" height="300" src="https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/Zeichnung_fett_frei_1-300x300.png" class="site-logo attachment-medium" alt="" data-size="medium" srcset="https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/Zeichnung_fett_frei_1-300x300.png 300w, https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/Zeichnung_fett_frei_1-150x150.png 150w, https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/Zeichnung_fett_frei_1-480x480.png 480w, https://oliverheidorn.de/wordpress/wp-content/uploads/2017/05/Zeichnung_fett_frei_1.png 512w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+			<div class="site-description">
+						<h3 class="sitename sitetitle"><a href="https://oliverheidorn.de/wordpress">Oliver Heidorn</a></h3>
+			<p class="tagline">Creative | Technology</p>
+					</div>
+	
+	</div>
+
+<nav class="nav nav-horizontal">
+	
+	<ul id="menu-default_menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-763"><a href="https://oliverheidorn.de/wordpress/">Intro</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-408"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/">Me</a>
+<ul  class="sub-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-831"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-87">Creative Me</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-829"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-114">Technology Me</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1051"><a href="https://oliverheidorn.de/wordpress/index.php/about_me/#layers-widget-column-128">Rest of Me</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1038"><a href="https://oliverheidorn.de/wordpress/index.php/kunden/">Kunden</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-576"><a href="https://oliverheidorn.de/wordpress/index.php/awards/">Awards</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-409"><a href="https://oliverheidorn.de/wordpress/index.php/connect/">Kontakt</a></li>
+</ul>
+	<a href="" class="responsive-nav"  data-toggle="#off-canvas-right" data-toggle-class="open">
+	<span class="l-menu"></span>
+</a>
+	</nav>			</div>
+					</header>
+
+		
+		<section id="wrapper-content" class="wrapper-content"><aside id="rev-slider-widget-86" class="widget container push-bottom-medium widget_revslider"><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" property="stylesheet" type="text/css" media="all" /><link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet" property="stylesheet" type="text/css" media="all" /><link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+<div id="rev_slider_94_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.0.8.5 fullwidth mode -->
+	<div id="rev_slider_94_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.8.5">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-152" data-transition="fade" data-slotamount="7"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="Main Slide" data-description="">
+		<!-- MAIN IMAGE -->
+		<img src="https://oliverheidorn.de/wordpress/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  width="1180" height="401" data-lazyload="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/05/ika_ingvar_header.jpg" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption eagle-header-title-hero   tp-resizeme" 
+			 id="slide-152-layer-8" 
+			 data-x="-18" 
+			 data-y="361" 
+						data-width="['178']"
+			data-height="['73']"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power2.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 5; min-width: 178px; max-width: 178px; max-width: 73px; max-width: 73px; white-space: normal; font-size: 80px; line-height: 72px; font-weight: 400; color: rgba(255, 255, 255, 1.00);border-color:rgba(26, 31, 31, 1.00);">Wie  
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption eagle-header-title-hero   tp-resizeme" 
+			 id="slide-152-layer-9" 
+			 data-x="485" 
+			 data-y="361" 
+						data-width="['539']"
+			data-height="['75']"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power2.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 6; min-width: 539px; max-width: 539px; max-width: 75px; max-width: 75px; white-space: normal; font-size: 80px; line-height: 72px; font-weight: 500; color: rgba(255, 255, 255, 1.00);border-color:rgba(26, 31, 31, 1.00);">ist das denn? 
+		</div>
+
+		<!-- LAYER NR. 3 -->
+		<div class="tp-caption eagle-header-title-hero   tp-resizeme" 
+			 id="slide-152-layer-10" 
+			 data-x="137" 
+			 data-y="352" 
+						data-width="['178']"
+			data-height="['73']"
+			data-transform_idle="o:1;"
+ 
+			 data-transform_in="opacity:0;s:300;e:Power2.easeInOut;" 
+			 data-transform_out="opacity:0;s:300;s:300;" 
+			data-start="500" 
+			data-splitin="none" 
+			data-splitout="none" 
+			data-responsive_offset="on" 
+
+			
+			style="z-index: 7; min-width: 178px; max-width: 178px; max-width: 73px; max-width: 73px; white-space: normal; font-size: 144px; line-height: 80px; color: rgba(255, 255, 255, 1.00);border-color:rgba(26, 31, 31, 1.00);">IKEA 
+		</div>
+	</li>
+</ul>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+<script>var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss=".tp-caption.eagle-header-title-hero,.eagle-header-title-hero{color:#1a1f1f;font-size:288px;font-family:cronos-pro-display,Lato,sans-serif;font-weight:600;text-decoration:none;background-color:transparent;padding:0px 20px 0px 20px;border-width:0px;border-color:rgb(26,31,31);border-style:none}";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}
+				else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			</script>
+		<script type="text/javascript">
+						/******************************************
+				-	PREPARE PLACEHOLDER FOR SLIDER	-
+			******************************************/
+
+			var setREVStartSize=function(){
+				try{var e=new Object,i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+					e.c = jQuery('#rev_slider_94_1');
+					e.gridwidth = [1000];
+					e.gridheight = [480];
+							
+					e.sliderLayout = "fullwidth";
+					if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})
+				}catch(d){console.log("Failure at Presize of Slider:"+d)}
+			};
+						
+				
+			setREVStartSize();
+			function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>"
+						jQuery(sliderID).show().html(errorMessage);
+				}
+						var tpj=jQuery;
+			tpj.noConflict();
+			var revapi94;
+			tpj(document).ready(function() {
+				if(tpj("#rev_slider_94_1").revolution == undefined){
+					revslider_showDoubleJqueryError("#rev_slider_94_1");
+				}else{
+					revapi94 = tpj("#rev_slider_94_1").show().revolution({
+						sliderType:"standard",
+						jsFileLocation:"https://oliverheidorn.de/wordpress/wp-content/plugins/revslider/public/assets/js/",
+						sliderLayout:"fullwidth",
+						dottedOverlay:"none",
+						delay:0,
+						navigation: {
+							onHoverStop:"on",
+						},
+						gridwidth:1000,
+						gridheight:480,
+						lazyType:"all",
+						shadow:0,
+						spinner:"off",
+						stopLoop:"on",
+						stopAfterLoops:0,
+						stopAtSlide:1,
+						shuffle:"off",
+						autoHeight:"off",
+						disableProgressBar:"on",
+						hideThumbsOnMobile:"off",
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						debugMode:false,
+						fallbacks: {
+							simplifyAll:"off",
+							nextSlideOnWindowFocus:"off",
+							disableFocusListener:false,
+						}
+					});
+				}
+			});	/*ready*/
+		</script>
+		<script>
+					var htmlDivCss = unescape("%23rev-slider-widget-26%20%7Bmargin-bottom%3A70px%7D");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}
+					else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+				  </script></div><!-- END REVOLUTION SLIDER --></aside>
+				<div class="container clearfix">
+					<div class="section-title clearfix medium text-left ">
+						<h3 class="heading">Frag Ingvar: Tonalitätsanalyse mit Machine Learning</h3>
+						<div class="excerpt"><p>Das schwedelnde Deutsch von IKEA ist eine sehr eigenständige Markensprache. Mit den Inhalten der kompletten ikea.de hab ich einen Style-Classifier trainiert, um Texte auf IKEA-Markmale zu untersuchen.</p>
+						</div>
+					</div>
+				</div>
+
+<!--   ************************************   DATEN-TEIL ************************************ -->
+
+			<aside id="custom_html-5" class="widget_text widget container push-bottom-medium widget_custom_html">
+				<div class="textwidget custom-html-widget"><div class="container clearfix" style="border: 1px solid #000">
+					<div class="row container list-grid">
+						<div id="layers-widget-column-154-204" class="layers-masonry-column layers-widget-column-204 span-12 last column has-image">
+								<div class="media image-top medium">
+									<br>
+									<div class="media center">
+									<canvas id="myChart" width="200" height="160" style="margin: 0 auto;"></canvas>
+										<script src="https://oliverheidorn.de/wordpress/wp-includes/css/Chart.bundle.js"></script>
+										<script>
+											var ctx = document.getElementById("myChart").getContext('2d');
+											var myChart = new Chart(ctx, {
+											  type: 'pie',
+											  data: {
+											    labels: ["neutral", "IKEA"],
+											    datasets: [{
+											      backgroundColor: [
+											        "#bbbbbb",
+											        "#3498db"
+											      ],
+											      data: {{ pieData }}
+											    }]
+											  },
+											  options: {
+											  responsive: false,
+											  rotation: -Math.PI,
+											  cutoutPercentage: 80,
+											  circumference: Math.PI,
+											    legend: {
+											    position: 'bottom'
+											  }
+											}
+											});
+										</script>
+									</div>
+						
+									<div class="media center medium">
+										<div class="media-body text-center">
+											<h1 class="heading">„{{ testSentence }}“</h1>
+												<div class="excerpt">
+													<p>Dein Beispielsatz ist zu {{ predIkea }} Prozent IKEA.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="media image-top medium">
+									<br>
+										<div class="media center">
+
+											<canvas id="importantNrs" width=100 height="20" style="margin: 0 auto;"></canvas>
+											<script src="https://oliverheidorn.de/wordpress/wp-includes/css/Chart.bundle.js"></script>
+											<script>
+
+										var ctx = document.getElementById("importantNrs").getContext('2d');
+										var stackedBar = new Chart(ctx, {
+										    type: 'horizontalBar',
+										    data: {
+										      labels: [
+										      	{% for w in wortListe[:3] %}
+										      	    " {{ w[0] }} ",
+
+										      	{% endfor%}
+										      	],
+										      datasets: [{
+										         label: "Neutral",
+										         backgroundColor: '#bbbbbb',
+										         data: [
+										      	{% for w in wortListe[:3] %}
+										      	    " {{ w[2] }} ",
+
+										      	{% endfor%}
+										      	],
+										      }, {
+										         label: "IKEA",
+										         backgroundColor: '#3498db',
+										         data: [
+										      	{% for w in wortListe[:3] %}
+										      	    " {{ w[1] }} ",
+
+										      	{% endfor%}
+										      	],
+										      }]
+										   },
+										   options: {
+										      responsive: true,
+										      legend: {
+										         display: false
+										      },
+										      scales: {
+										         yAxes: [{
+										            stacked: true
+										         }],
+										         xAxes: [{
+										            stacked: true
+										         }]
+										      },
+
+										   }
+										});
+										</script>
+										</div>
+									</div>
+								</div>					
+							</div>
+						</div>
+
+<!--   ************************************   DATEN-TEIL ENDE ************************************ -->
+
+					</br>
+
+<!--   ************************************   EINGABE-TEIL ************************************ -->
+						<div class="container clearfix" style="border: 1px solid #000">
+							<div class="section-title clearfix medium text">													
+								<div class="excerpt">
+									<h3 class="story"><center>Hej, probier deinen eigenen Satz aus!</center></h3>
+								</div>
+								<aside id="search-1" class="content widget widget_search">
+									<form action="" method="post" id="commentform" role="form">
+
+
+									{{ form.csrf }}
+
+										<label>
+											{{ form.ingvarSatz(class="search-field", placeholder="Hier eingeben", value="", style="border: 1px solid #999", title="Search for:") }}
+											<!--<input type="search" class="search-field" placeholder="Hier eingeben" value="" style="border: 1px solid #999" name="s" title="Search for:" /> 
+											<input name = type="submit" class="button" style="vertical-align: bottom" value="Los!" title="Sende" />   -->
+											<input  class="button" name="submit" type="submit" style="vertical-align: bottom" value="Los!" title="Sende" /> 
+										</label>
+									</form>
+								</aside>
+							</div>					
+						</div>
+
+<!--   ************************************   EINGABE-TEIL ENDE ************************************ -->
+
+
+
+
+				<section class="widget row content-vertical-massive  " id="layers-widget-column-157">
+					<div class="container clearfix">
+						<div class="section-title clearfix medium text-left ">
+						<h3 class="heading">Ein Blick unter die Motorhaube</h3>
+							<div class="excerpt"><p>Die Textanalyse übernimmt das Natural Language Toolkit. Es ist ein Quasi-Standard um Texte zu zerlegen, Sinnzusammenhänge zu bilden und Stil- oder Stimmungsvorherhsagen zu machen</p></div>
+							</div>
+													
+
+							<div class="row container list-grid">					
+								<div id="layers-widget-column-157-984" class="layers-masonry-column layers-widget-column-984 span-4  column">
+									<div class="media image-top medium">
+										<div class="media-body text-left">
+											<h5 class="heading">Natural Language 
+											</h5>
+											<div class="excerpt"><p>1954 übersetzte ein Computer mit glühenden Transistoren erstmals 60 russische Sätze ins Englische. Seitdem träumen Menschen von der sprachbegabten Maschine. Und doch sollte es noch drei Jahrzehnte dauern, bis Maschine Learning nennenswerte Fortschritte brachte.</p>
+											</div>
+										</div>
+									</div>
+							</div>
+						
+							<div id="layers-widget-column-157-153" class="layers-masonry-column layers-widget-column-153 span-4  column">
+								<div class="media image-top medium">
+									<div class="media-body text-left">
+										<h5 class="heading">Training																	</h5>
+										<div class="excerpt"><p>Classifier des Natural Language Processing Toolkits werden mit großen Textmengen trainiert: Alltagssprache auf der einen Seite, IKEA-Tonalität auf der anderen. Dann kann der sogenannte „Naive Bayes&#8220;-Classifier mit Machine-Learning-Methoden die Tonalität voraussagen.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div id="layers-widget-column-157-102" class="layers-masonry-column layers-widget-column-102 span-4 last  column">
+								
+								<div class="media image-top medium">
+									
+									<div class="media-body text-left">
+									<h5 class="heading">Text-Corpora
+									</h5>
+								<div class="excerpt"><p>Für das Training schrieb ich einen Spider, der ausgewählte Textstellen der IKEA-Website Satz für Satz ausliest. Inspirativ geschriebene Textbausteine fügte ich dem Trainingstext („Korpus“) hinzu. So kamen rund 21223 stilistisch eindeutige IKEA Sätze zustande.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+
+
+			<section class="widget row content-vertical-massive" id="layers-widget-column-50">
+					<div class="container clearfix" style="background-color:#e1e1e1;padding-top:20px;">
+
+					<div class="row container list-grid">												
+						<div id="layers-widget-column-50-554" class="layers-masonry-column layers-widget-column-554 span-4 column ">
+							<div class="media image-top medium">
+							
+								<div class="media-body text-left">
+									<div class="excerpt"><center><h2>Mein <br>Job</h3></center></div>
+								</div>
+							</div>
+						</div>
+
+					<div class="row container list-grid">												
+						<div id="layers-widget-column-50-554" class="layers-masonry-column layers-widget-column-554 span-2 column has-image">
+							<div class="media image-top medium">
+								<div class="media-image ">
+										<img width="50" height="50" src="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_idee.png" class="attachment-medium size-medium" alt="" srcset="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_idee.png 200w, https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_idee.png 150w" sizes="(max-width: 50px) 30vw, 30px" />
+								</div>
+								
+								<div class="media-body text-left">
+									<div class="excerpt"><center>Idee</center></div>
+								</div>
+							</div>
+						</div>
+					
+						<div id="layers-widget-column-50-619" class="layers-masonry-column layers-widget-column-619 span-2 last  column has-image">
+							<div class="media image-top medium">
+								<div class="media-image ">
+										<img width="50" height="50" src="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_code.png" class="attachment-medium size-medium" alt="" srcset="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_code.png 200w, https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_code.png 150w" sizes="(max-width: 50px) 30vw, 30px" />
+							</div>			
+							<div class="media-body text-left">
+								<div class="excerpt"><center>Coding</center></div>
+							</div>
+						</div>
+					</div>
+					
+						<div id="layers-widget-column-50-503" class="layers-masonry-column layers-widget-column-503 span-2  column has-image">
+						
+							<div class="media image-top medium">
+								<div class="media-image ">
+										<img width="50" height="50" src="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_image.png" class="attachment-medium size-medium" alt="" srcset="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_image.png 200w, https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_image.png 150w" sizes="(max-width: 50px) 30vw, 30px" />
+								</div>
+								
+							<div class="media-body text-left">
+								<div class="excerpt"><center>Conversation</center></div>
+							</div>
+						</div>
+					</div>
+					
+						<div id="layers-widget-column-50-619" class="layers-masonry-column layers-widget-column-619 span-2 last  column has-image">
+							<div class="media image-top medium">
+								<div class="media-image ">
+										<img width="50" height="50" src="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_iot.png" class="attachment-medium size-medium" alt="" srcset="https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_iot.png 200w, https://oliverheidorn.de/wordpress/wp-content/uploads/2018/06/ic_iot.png 150w" sizes="(max-width: 50px) 30vw, 30px" />
+							</div>			
+							<div class="media-body text-left">
+								<div class="excerpt"><center>IoT</center></div>
+							</div>
+						</div>
+					</div>
+			</section>
+
+
+			<aside id="text-236" class="widget container push-bottom-medium widget_text">
+				<div class="section-title clearfix"><h4 class="heading">Classifier-Hijacking.</h4>
+				</div>			
+				<div class="textwidget"><p><center><big>Der „Naive Bayes“-Classifier wird üblicherweise mit positiven und negativen Bewertungen zu einem Thema trainiert und zur „Stimmungsanalyse“ <a href="http://text-processing.com/demo/sentiment/">(Sentiment Analysis) </a>genutzt. Diese Mechanik hab ich für „Ingvar“ in meinem Sinne gekapert. Die „IKEA“-Seite des Modells trainiere ich mit inspirativen Texten der IKEA Website. Die allgemeine Seite mit dem <a href="http://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/tiger.html">Tiger Corpus</a> der Uni Stuttgart. </big></center></p>
+				</div>
+			</aside>
+
+			</br>
+			
+			<aside id="text-237" class="widget container push-bottom-medium widget_text">
+				<div class="section-title clearfix"><h4 class="heading">Treffsicherheit.</h4></div>			
+				<div class="textwidget"><p><center><big>Eingebaut Testmethoden zeigen die Qualität der Trainings: Zunächst wird mit einer großen Textportion der beiden Korpora der Classifier trainiert. Dann soll er zufällig ausgewählte Testsätze korrekt dem einen oder anderen Korpus zuordnen. „Ingvar“ meistert den Test mit Bravour: 96,75080184074746 Prozent der Testsätze werden korrekt zugeordnet.</big></center></p>
+				</div>
+			</aside>
+			<aside id="custom_html-7" class="widget_text widget container push-bottom-medium widget_custom_html">
+				<div class="textwidget custom-html-widget"><section class="widget row content-vertical-massive  " id="layers-widget-column-98">
+		</section>
+
+
+<!-- back-to-top -->
+		
+		<footer id="footer" class="footer-site">
+						<div class="container clearfix">
+				
+				
+								<div class="row copyright">
+					<div class="column span-12">
+											</div>
+											<div class="column span-12">
+							<p class="site-text">© 2017 Oliver Heidorn</p>
+						</div>
+									</div>
+							</div>
+			
+					</footer>
+					<!-- END / FOOTER -->
+		
+	</section><!-- END / MAIN SITE #wrapper -->
+		<link rel='stylesheet' id='layers-inline-styles-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/inline.css?ver=4.8.6' type='text/css' media='all' />
+<style id='layers-inline-styles-inline-css' type='text/css'>
+ body { font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;} body, .wrapper-site:before, .wrapper-site:after, .header-site.header-sticky, .sub-menu{ background-color: #202525;} .header-site.header-overlay.is_stuck{ background-color: rgba(32,37,37,.8);} .header-site, .header-site a, .header-site a:hover, .header-site .nav-horizontal li a, .footer-site, .copyright, .copyright a, .footer-site, .footer-site a, .footer-site .section-nav-title, .footer-site table th, .footer-site #wp-calendar td, .footer-site #wp-calendar caption{ color: #F5F5F5;} .header-site .nav-horizontal .sub-menu li:after{ background-color: rgba(245,245,245,.15);} .footer-site table, .row + .copyright{ border-color: #F5F5F5;} #wrapper-content{ border-color: #202525;} .header-site .nav-horizontal li a:hover, .copyright a:hover{ color: #7BFFFF;} #wrapper-content, .header-site .nav-horizontal > ul > li.current-menu-item, .nav-horizontal li.current_page_parent, .section-title.large .heading, .button, .button:hover, .eagle-readmore-effect{ background-color: #f5f5f5;} .header-site .nav-horizontal > ul > li.current-menu-item > a, .nav-horizontal li.current_page_parent > a, .wrapper-content, .section-title .heading a, .section-title.large .eagle-heading-background, .sticky-post, .meta-info a, .eagle-share-post a, .button, .sidebar a, .story blockquote, .pagination a, .eagle-comment-link, .comment .copy a, .comment-form input, .wpcf7-form input, .comment-form textarea, .wpcf7-form textarea, .form-submit input[type=submit], input.wpcf7-submit, .comment-form a, .eagle-post-nav a{ color: #272B2F;} .button, .button:hover, .comment-form, .wpcf7-form, .comment-form-author, .wpcf7-your-name, .comment-form-email, .wpcf7-your-email, .comment-form-comment, .wpcf7-your-message, .wpcf7-form-submit{ border-color: #272B2F;} a:hover, .sidebar, .meta-info, .eagle-share-post, .pagination, .pagination span, .pagination .current, .nav-links > *:after, input.search-field, input.search-submit, .section-nav-title, #wp-calendar caption, #wp-calendar td, #comments h3, .avatar .avatar-body .avatar-name, .comment .copy, .comment-form label, .wpcf7-form label, .comment-form, .wpcf7-form{ color: #939597;} input.search-submit{ color: #d2d2d3;} .search-form, .section-nav-title, #comments h3{ border-color: #d2d2d3;} pre{ background-color: #eeeeee;} a, .section-title .heading a:hover, .meta-info a:hover, .eagle-share-post a:hover, .button:hover, .pagination a:hover, input.search-submit:hover, .sidebar a:hover, .eagle-comment-link:hover, .comment .copy a:hover, .form-submit input[type=submit]:hover, input.wpcf7-submit:hover, .comment-form a:hover{ color: #00B889;}  #layers-widget-column-157 { background-repeat: no-repeat;background-position: center;}  #layers-widget-column-157-984 { background-repeat: no-repeat;background-position: center;}  #layers-widget-column-157-153 { background-repeat: no-repeat;background-position: center;}  #layers-widget-column-157-102 { background-repeat: no-repeat;background-position: center;} 
+</style>
+<link rel='stylesheet' id='layers-custom-styles-css'  href='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/css/custom.css?ver=4.8.6' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/oliverheidorn.de\/wordpress\/index.php\/wp-json\/","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Bitte best\u00e4tigen Sie, dass Sie keine Maschine sind."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var sb_instagram_js_options = {"sb_instagram_at":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/plugins/instagram-feed/js/sb-instagram.min.js?ver=1.4.9'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-content/themes/layerswp/assets/js/layers.framework.js?ver=1.2.4'></script>
+<script type='text/javascript' src='https://oliverheidorn.de/wordpress/wp-includes/js/wp-embed.min.js?ver=4.8.6'></script>
+</body>
+</html>
